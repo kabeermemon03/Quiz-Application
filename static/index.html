@@ -22,25 +22,20 @@
     <div class="timer" id="timer">
         <h2>01:00</h2>
     </div>
+    <div class="btn-upper">
+        <button id="startBtn" class="btn-purple">Start</button>
+    </div>
     <div class="container">
         <h3 class="container-h3">Simple Quiz</h3>
-
+        <div class="divider"></div>
         <div class="quiz">
-            <h4><svg class="qs-svg" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                    class="bi bi-arrow-right-short" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8" />
-                </svg> Question Is Here?</h4>
-            <div class="answerBtns">
-                <button class="mcq-btn">Option A</button>
-                <button class="mcq-btn">Option B</button>
-                <button class="mcq-btn">Option C</button>
-                <button class="mcq-btn">Option D</button>
-            </div>
+            <h4 id="question"> Question Is Here?</h4>
+            <div id="answerBtns" class="answerBtns"></div>
+            <button id="nextBtn" class="btn-purple">Next</button>
         </div>
     </div>
-
     </div>
+    <script src="index.js"></script>
 </body>
 
 </html>
