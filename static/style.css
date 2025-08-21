@@ -1,60 +1,62 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-color: rgb(137, 63, 205);
-    font-family: poppins;
+  background-color: rgb(137, 63, 205);
+  font-family: poppins;
 }
 
 .heading {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    background-color: rgb(150, 62, 150);
-    border-radius: 20px;
-    margin: 20px 220px;
-    padding: 20px 100px;
-    text-decoration: underline;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  background-color: rgb(150, 62, 150);
+  border-radius: 20px;
+  margin: 20px 220px;
+  padding: 20px 100px;
+  text-decoration: underline;
 }
 
 .timer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid black;
-    border-radius: 20px;
-    margin: 20px 600px;
-    padding: 20px;
-    background-color: rgb(150, 62, 150);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+  border-radius: 20px;
+  margin: 20px 600px;
+  padding: 20px;
+  background-color: rgb(150, 62, 150);
 }
 
 .container {
-    align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    background-color: white;
-    padding: 30px 30px;
-    margin: 20px 114px;
-    border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  background-color: white;
+  padding: 30px 30px;
+  margin: 20px 114px;
+  border-radius: 10px;
 }
 
 .answerBtns {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.container-h3{
-    font-weight: 600;
-    font-weight: 25px;
-    color: #001e4d;
+.container-h3 {
+  font-weight: 600;
+  font-weight: 25px;
+  color: #001e4d;
 
 }
-.divider{
+
+.divider {
   border-top: 2px solid rgb(74, 73, 73);
 }
+
 .mcq-btn {
   display: block;
   width: 100%;
@@ -63,7 +65,7 @@ body {
   font-size: 1rem;
   font-weight: 500;
   color: #fff;
-  background: #6a0dad; 
+  background: #6a0dad;
   border: none;
   border-radius: 12px;
   cursor: pointer;
@@ -73,32 +75,33 @@ body {
 .mcq-btn:hover {
   background: #8e2de2;
   transform: scale(1.02);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .mcq-btn:active {
   transform: scale(0.98);
-  background: #4b0082; 
+  background: #4b0082;
 }
 
 .mcq-btn.selected {
-  background: #00c853; 
+  background: #00c853;
   color: #fff;
   font-weight: 600;
 }
 
-.question{
+.question {
   margin-top: 50px;
   padding: 20px;
 }
-:root{
+
+:root {
   --btn-purple: #963E96;
   --btn-purple-600: #7f3280;
   --btn-purple-700: #6f2b70;
   --btn-purple-50: #f6e9f8;
 }
 
-.btn-purple{
+.btn-purple {
   --bg: var(--btn-purple);
   --fg: #000000;
 
@@ -110,46 +113,66 @@ body {
   border-radius: .75rem;
   cursor: pointer;
   transition: background .15s ease, box-shadow .15s ease, transform .02s ease;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
 }
 
-.btn-purple:hover{ background: var(--btn-purple-600); }
-.btn-purple:active{ background: var(--btn-purple-700); transform: translateY(1px); }
-.btn-purple:focus-visible{
-  outline: none;
-  box-shadow: 0 0 0 3px var(--btn-purple-50), 0 0 0 6px rgba(150,62,150,.35);
+.btn-purple:hover {
+  background: var(--btn-purple-600);
 }
-.btn-purple:disabled{
+
+.btn-purple:active {
+  background: var(--btn-purple-700);
+  transform: translateY(1px);
+}
+
+.btn-purple:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--btn-purple-50), 0 0 0 6px rgba(150, 62, 150, .35);
+}
+
+.btn-purple:disabled {
   opacity: .6;
   cursor: not-allowed;
 }
 
 /* outline variant */
-.btn-purple.outline{
+.btn-purple.outline {
   background: transparent;
   color: var(--btn-purple);
   border-color: var(--btn-purple);
 }
-.btn-purple.outline:hover{
+
+.btn-purple.outline:hover {
   background: var(--btn-purple-50);
 }
 
 /* subtle “ghost” variant */
-.btn-purple.ghost{
+.btn-purple.ghost {
   background: transparent;
   color: var(--btn-purple);
   border-color: transparent;
 }
-.btn-purple.ghost:hover{ background: var(--btn-purple-50); }
 
-.btn-upper{
+.btn-purple.ghost:hover {
+  background: var(--btn-purple-50);
+}
+
+.btn-upper {
   display: flex;
   margin-left: 70vw;
   gap: 20px;
 }
-.correct{
+
+.correct {
   background-color: #9aeabc;
 }
-.incorrect{
+
+.incorrect {
   background-color: #ff9393;
+}
+
+#nextBtn {
+  display: none;
+  margin: 20px auto;
+  padding: 10px 20px;
 }

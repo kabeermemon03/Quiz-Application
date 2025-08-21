@@ -20,10 +20,46 @@ const Questions = [
     {
         question: "What is the capital of Italy?",
         answer: [
-            { text: "Paris", correct: false },
-            { text: "Berlin", correct: false },
+            { text: "Venice", correct: false },
+            { text: "Milan", correct: false },
             { text: "Rome", correct: true },
-            { text: "London", correct: false },
+            { text: "Turin", correct: false },
+        ]
+    },
+    {
+        question: "Which Italian city is known as the birthplace of pizza?",
+        answer: [
+            { text: "Rome", correct: false },
+            { text: "Florence", correct: false },
+            { text: "Naples", correct: true },
+            { text: "Venice", correct: false },
+        ]
+    },
+    {
+        question: "Which city is known as the fashion capital of Italy?",
+        answer: [
+            { text: "Turin", correct: false },
+            { text: "Milan", correct: true },
+            { text: "Genoa", correct: false },
+            { text: "Palermo", correct: false },
+        ]
+    },
+    {
+        question: "Which Italian city has canals instead of roads?",
+        answer: [
+            { text: "Venice", correct: true },
+            { text: "Florence", correct: false },
+            { text: "Rome", correct: false },
+            { text: "Bologna", correct: false },
+        ]
+    },
+    {
+        question: "Which city is known for Romeo and Juliet?",
+        answer: [
+            { text: "Verona", correct: true },
+            { text: "Rome", correct: false },
+            { text: "Naples", correct: false },
+            { text: "Milan", correct: false },
         ]
     }
 ]
@@ -54,31 +90,65 @@ function ShowQuestion() {
         button.innerHTML = answer.text
         button.classList.add("mcq-btn")
         answerElement.appendChild(button)
-        if(answer.correct)
-        {
+        if (answer.correct) {
             button.dataset.correct = answer.correct;
         }
-        button.addEventListener("click", selectAnswer())
+        button.addEventListener("click", selectAnswer)
     });
 }
 
-function resetState(){
+function resetState() {
     nextBtn.style.display = 'none'
-    while(answerElement.firstChild)
-    {
+    while (answerElement.firstChild) {
         answerElement.removeChild(answerElement.firstChild)
     }
 }
 
-function selectAnswer(e){
+function selectAnswer(e) {
     const selectedButton = e.target
     const isCorrect = selectedButton.dataset.correct === "true";
-    if(isCorrect)
-    {
+    if (isCorrect) {
         selectedButton.classList.add("correct")
+        Score++
     }
-    else{
+    else {
         selectedButton.classList.add("incorrect")
     }
+    Array.from(answerElement.children).forEach(btn => {
+        if (btn.dataset.correct === "true") {
+            btn.classList.add("correct")
+        }
+        btn.disabled = true;
+    });
+    nextBtn.style.display = 'block'
 }
+
+nextBtn.addEventListener('click', () => {
+    if (currentQuestionIndex < Questions.length - 1) {
+        handleNextButton();
+    } else {
+        ShowScore();
+    }
+})
+
+
+function handleNextButton() {
+    currentQuestionIndex++
+    ShowQuestion()
+}
+
+function ShowScore() {
+    resetState()
+    questionElement.innerHTML = `You Scored ${Score} Out Of ${Questions.length}!`
+    nextBtn.innerHTML = 'Play Again'
+    nextBtn.style.display = 'block'
+    nextBtn.addEventListener('click', ()=>{
+        StartQuiz()
+    })
+}
+
+let timeLeft = 30
+let timerId;
+
+
 StartQuiz()
