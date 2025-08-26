@@ -68,6 +68,7 @@ const questionElement = document.getElementById("question")
 const answerElement = document.getElementById("answerBtns")
 const nextBtn = document.getElementById("nextBtn")
 
+
 let currentQuestionIndex = 0;
 let Score = 0;
 
@@ -110,9 +111,13 @@ function selectAnswer(e) {
     if (isCorrect) {
         selectedButton.classList.add("correct")
         Score++
+        clearInterval(timer)
+        startTimer()
     }
     else {
         selectedButton.classList.add("incorrect")
+        clearInterval(timer)
+        startTimer()
     }
     Array.from(answerElement.children).forEach(btn => {
         if (btn.dataset.correct === "true") {
@@ -147,8 +152,26 @@ function ShowScore() {
     })
 }
 
-let timeLeft = 30
-let timerId;
+let timeLeft = 30;
+let timer;
 
+function startTimer(){
+    let timeLeft = 30;
+    
+    clearInterval(timer)
+
+    timer = setInterval(function(){
+        document.getElementById("time-30-seconds").textContent = timeLeft
+        timeLeft--
+
+        if(timeLeft < 0)
+        {
+            clearInterval(timer)
+            alert("Time's Up!! , Moving To Next Question...")
+            handleNextButton()   
+        }
+    }, 1000)
+}
 
 StartQuiz()
+startTimer()

@@ -13,7 +13,7 @@ body {
   justify-content: center;
   align-items: center;
   border: 2px solid black;
-  background-color: rgb(150, 62, 150);
+  background-color: rgb(110, 70, 255);
   border-radius: 20px;
   margin: 20px 220px;
   padding: 20px 100px;
@@ -28,7 +28,7 @@ body {
   border-radius: 20px;
   margin: 20px 600px;
   padding: 20px;
-  background-color: rgb(150, 62, 150);
+  background-color: rgb(110, 70, 255);
 }
 
 .container {
@@ -135,7 +135,6 @@ body {
   cursor: not-allowed;
 }
 
-/* outline variant */
 .btn-purple.outline {
   background: transparent;
   color: var(--btn-purple);
@@ -146,7 +145,6 @@ body {
   background: var(--btn-purple-50);
 }
 
-/* subtle “ghost” variant */
 .btn-purple.ghost {
   background: transparent;
   color: var(--btn-purple);
@@ -176,3 +174,55 @@ body {
   margin: 20px auto;
   padding: 10px 20px;
 }
+
+#time-30-seconds{
+  margin: 0 50px;
+}
+
+#timer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+#timer-1 {
+  background: #f3f3f3;
+  border: 2px solid #6c63ff;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#time-30-seconds {
+  font-size: 24px;
+  font-weight: 600;
+  color: #6c63ff;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.low-time {
+  color: #ff3b3b !important;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+#time-30-seconds {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  background: #6a0dad;
+  padding: 6px 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
